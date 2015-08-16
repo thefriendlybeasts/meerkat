@@ -1,0 +1,7 @@
+addon:
+  name: Howl
+  dir:  howl
+
+site:
+  dir:  thedigest
+  root: html
