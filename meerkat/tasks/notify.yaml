@@ -8,6 +8,13 @@ vendor:
     message: Vendor files updated.
 
 
+config:
+  options:
+    message: Config files copied.
+
+
+
+
 notify_hooks:
   options:
     success: true

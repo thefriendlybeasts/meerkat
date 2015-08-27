@@ -3,7 +3,7 @@ addon:
     - expand: true
       cwd: '<%= m.addon.dir %>/'
       src:
-        - '*.php'
+        - '*.{php,yaml}'
       dest: '<%= m.sitesPath %>/<%= m.site.dir %>/<%= m.site.root %>/_add-ons/<%= m.addon.dir %>/'
 
 vendor:
@@ -13,3 +13,11 @@ vendor:
       src:
         - '**'
       dest: '<%= m.sitesPath %>/<%= m.site.dir %>/<%= m.site.root %>/_add-ons/<%= m.addon.dir %>/vendor/'
+
+config:
+  files:
+    - expand: true
+      cwd: '_config/add-ons/<%= m.addon.dir %>/'
+      src:
+        - '**'
+      dest: '<%= m.sitesPath %>/<%= m.site.dir %>/<%= m.site.root %>/_config/add-ons/<%= m.addon.dir %>/'
