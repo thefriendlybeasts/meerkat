@@ -3,14 +3,9 @@ addon:
     message: '<%= m.addon.name %> files copied.'
 
 
-vendor:
+settings:
   options:
-    message: Vendor files updated.
-
-
-config:
-  options:
-    message: Config files copied.
+    message: Settings files copied.
 
 
 

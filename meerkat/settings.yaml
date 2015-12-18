@@ -1,3 +1,5 @@
 addon:
-  name: Howl
-  dir:  howl
+  # The proper name of your addon (as you would display it in marketing).
+  name: My Addon
+  # The name of the dir that holds your addon.
+  dir: MyAddon

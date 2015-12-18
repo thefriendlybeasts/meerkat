@@ -3,21 +3,14 @@ addon:
     - expand: true
       cwd: '<%= m.addon.dir %>/'
       src:
-        - '*.{php,yaml}'
-      dest: '<%= m.sitesPath %>/<%= m.site.dir %>/<%= m.site.root %>/_add-ons/<%= m.addon.dir %>/'
+        - '**/*.{php,json,yaml}'
+      dest: '<%= m.global.sites_path %>/<%= m.site.dir %>/<%= m.site.root %>/site/addons/<%= m.addon.dir %>/'
 
-vendor:
+
+settings:
   files:
     - expand: true
-      cwd: '<%= m.addon.dir %>/vendor/'
+      cwd: '<%= m.settingsPath %>'
       src:
         - '**'
-      dest: '<%= m.sitesPath %>/<%= m.site.dir %>/<%= m.site.root %>/_add-ons/<%= m.addon.dir %>/vendor/'
-
-config:
-  files:
-    - expand: true
-      cwd: '_config/add-ons/<%= m.addon.dir %>/'
-      src:
-        - '**'
-      dest: '<%= m.sitesPath %>/<%= m.site.dir %>/<%= m.site.root %>/_config/add-ons/<%= m.addon.dir %>/'
+      dest: '<%= m.global.sites_path %>/<%= m.site.dir %>/<%= m.site.root %>'

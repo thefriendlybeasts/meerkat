@@ -21,8 +21,13 @@ module.exports = function(grunt) {
   }
 
 
+  // Set default preferences.
+  meerkat.global            = {};
+  meerkat.global.sites_path = expandHomeDir('~/Sites');
+
+
   // Set vars for use in tasks.
-  meerkat.sitesPath = expandHomeDir('~/Sites');
+  meerkat.settingsPath = 'site/settings/addons';
 
 
   // Overwrite defaults with user preferences.

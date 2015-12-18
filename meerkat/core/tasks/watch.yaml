@@ -1,25 +1,17 @@
 addon:
   files:
-    - <%= m.addon.dir %>/*.{php,yaml,html}
+    - <%= m.addon.dir %>/**/*.{php,json,yaml}
   tasks:
     - copy:addon
     - notify:addon
 
 
-vendor:
+settings:
   files:
-    - <%= m.addon.dir %>/vendor/**
+    - <%= m.settingsPath %>/*.yaml
   tasks:
-    - copy:vendor
-    - notify:vendor
-
-
-# config:
-#   files:
-#     - _config/add-ons/<%= m.addon.dir %>/*.yaml
-#   tasks:
-#     - copy:config
-#     - notify:config
+    - copy:settings
+    - notify:settings
 
 
 
