@@ -5,10 +5,10 @@ companion to [Mr. Pig][mr-pig].
 
 
 # Features
-- Copificationization of addon files to Statamic site dir
-- Notifications when copies are done
-- Execution of bash commands on save
-- Ability to override core Meerkat tasks w/o complicating version control
+- Copies addon files to Statamic site dir
+- Notifies when copies are done
+- Executes configured bash commands on save
+- Allows you to override core Meerkat tasks w/o complicating version control
 
 
 
