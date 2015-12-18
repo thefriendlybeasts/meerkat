@@ -16,7 +16,7 @@ module.exports = function(grunt) {
     grunt.log.writeln('-------');
     grunt.log.writeln(
       'You can set personal preferences for things like which browser to use during development ' +
-      'in `meerkat/preferences.yaml`. See `meerkat/preferences.yaml.sample`.'
+      'in `meerkat/preferences.yaml`. See `meerkat/preferences.sample.yaml`.'
     );
   }
 
