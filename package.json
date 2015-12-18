@@ -1,6 +1,6 @@
 {
   "name": "meerkat",
-  "description": "a YAML-configurable Grunt setup for developing Statamic add-ons",
+  "description": "a YAML-configurable Grunt setup for developing Statamic addons",
   "version": "2.0.0",
   "author": {
     "name": "The Friendly Beasts",
