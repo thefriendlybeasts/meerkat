@@ -4,10 +4,10 @@ module.exports = function(grunt) {
 
 
   // Load the config files.
-  var meerkat = grunt.file.readYAML('meerkat/meerkat.yaml');
+  var meerkat = grunt.file.readYAML('meerkat/settings.yaml');
 
-  if (grunt.file.exists('meerkat/meerkat.preferences.yaml')) {
-    var meerkatPrefs = grunt.file.readYAML('meerkat/meerkat.preferences.yaml');
+  if (grunt.file.exists('meerkat/preferences.yaml')) {
+    var meerkatPrefs = grunt.file.readYAML('meerkat/preferences.yaml');
   } else {
     var meerkatPrefs = {};
 
@@ -16,16 +16,24 @@ module.exports = function(grunt) {
     grunt.log.writeln('-------');
     grunt.log.writeln(
       'You can set personal preferences for things like which browser to use during development ' +
-      'in `meerkat/meerkat.preferences.yaml`. See `meerkat/meerkat.preferences.yaml.sample`.'
+      'in `meerkat/preferences.yaml`. See `meerkat/preferences.yaml.sample`.'
     );
   }
 
-  meerkat           = mergeObjects(meerkat, meerkatPrefs);
+
+  // Set vars for use in tasks.
   meerkat.sitesPath = expandHomeDir('~/Sites');
 
 
+  // Overwrite defaults with user preferences.
+  meerkat = mergeObjects(meerkat, meerkatPrefs);
+
+
+
+
   require('load-grunt-config')(grunt, {
-    configPath: 'meerkat/tasks',
+    configPath: 'meerkat/core/tasks',
+    overridePath: 'meerkat/tasks',
     config: {
       m: meerkat
     }
@@ -35,38 +43,29 @@ module.exports = function(grunt) {
 
 
 
-
 // ---
 
 
 
 
-
+// HELPERS
 /**
- * Recursively merge the properties of two objects into the first, then return
- * the object.
+ * Recursively merge the properties of two objects into the first, then return the object.
  * @param {object} obj1 The first object.
  * @param {object} obj2 The second object.
  */
 function mergeObjects(obj1, obj2) {
-
   for (var p in obj2) {
     try {
       // Property in destination object set; update its value.
-      if (obj2[p].constructor == Object) {
-        obj1[p] = mergeObjects(obj1[p], obj2[p]);
-
-      } else {
-        obj1[p] = obj2[p];
-
-      }
+      obj1[p] = obj2[p].constructor == Object ? mergeObjects(obj1[p], obj2[p]) : obj2[p];
 
     } catch(e) {
       // Property in destination object not set; create it and set its value.
       obj1[p] = obj2[p];
-
     }
   }
+
 
   return obj1;
 }
