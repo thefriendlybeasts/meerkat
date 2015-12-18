@@ -8,6 +8,6 @@ Not sure what to do? Check out [the docs][docs].
 
 
 
-[docs]: mr_pig/DOCS.md
+[docs]: meerkat/DOCS.md
 [grunt]: http://gruntjs.com/
 [statamic]: http://statamic.com/
