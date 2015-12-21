@@ -13,4 +13,4 @@ settings:
       cwd: '<%= m.settingsPath %>'
       src:
         - '**'
-      dest: '<%= m.global.sites_path %>/<%= m.site.dir %>/<%= m.site.root %>'
+      dest: '<%= m.global.sites_path %>/<%= m.site.dir %>/<%= m.site.root %>/<%= m.settingsPath %>'
